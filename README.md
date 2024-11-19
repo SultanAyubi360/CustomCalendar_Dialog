@@ -57,4 +57,9 @@ dependencies {
 
 ---
 
+## Using CustomCalendarView Library
+
+The GitHub project source includes a sample application, that is used for demonstrating the various features currently supported by this library. Once the library is added to your project, you can
+include the CustomCalendarView into your activity/fragment layout using the following code snippets.
+
 
