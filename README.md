@@ -33,8 +33,6 @@ dependencyResolutionManagement {
     }
 }
 ```
-<br>
-<br>
 
 ### Step 2
 
