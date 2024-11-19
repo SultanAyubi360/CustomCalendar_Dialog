@@ -1,4 +1,5 @@
 # CustomCalendar_Dialog
+A highly customizable calendar library for Android.
 
 <div align="center">
 	
@@ -7,4 +8,56 @@
 
 </div>
 
-![image](https://github.com/user-attachments/assets/13e8de9b-6ca1-4ca3-8eea-55b9272ab1f7)
+## Usage
+### Gradle
+
+- **Step 1**
+
+#### In older Gradle Style (Build.gradle (project level))
+```
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+#### In New Project Structure (Settings.gradle)
+```
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        ......
+        maven { url 'https://jitpack.io' }
+        .....
+    }
+}
+```
+<br>
+<br>
+
+### Step 2
+
+Include the library as a local library project or add the dependency in your build.gradle.
+
+# For groovy DSL
+
+```
+dependencies {
+    implementation 'com.github.SultanAyubi360:SeekbarLibrary:1.2'
+}
+```
+
+# For Kotlin DSL
+
+
+```
+dependencies {
+    implementation ("com.github.SultanAyubi360:SeekbarLibrary:1.2")
+}
+```
+
+---
+
+
