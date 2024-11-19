@@ -62,4 +62,54 @@ dependencies {
 The GitHub project source includes a sample application, that is used for demonstrating the various features currently supported by this library. Once the library is added to your project, you can
 include the CustomCalendarView into your activity/fragment layout using the following code snippets.
 
+### Step 3
+
+Reference the View in Kotlin code.
+
+This is used to add options how many you want to display on calendar.Just change the options you want to change according to your need.
+
+```groovy
+ private val pastDateListEntries = arrayListOf(
+        PastDatesResponse(1, "Today"),
+        PastDatesResponse(2, "Yesterday"),
+        PastDatesResponse(3, "Last 30 days"),
+        PastDatesResponse(4, "Last 60 days"),
+        PastDatesResponse(5, "Last 90 days"),
+        PastDatesResponse(6, "Last 180 days"),
+        PastDatesResponse(7, "Custom")
+    )
+```
+
+Let us now initialize the calendar view to control the various other appearances and behavior of calendar using the following methods.
+
+```groovy
+ private val pastDateListEntries = arrayListOf(
+        PastDatesResponse(1, "Today"),
+        PastDatesResponse(2, "Yesterday"),
+        PastDatesResponse(3, "Last 30 days"),
+        PastDatesResponse(4, "Last 60 days"),
+        PastDatesResponse(5, "Last 90 days"),
+        PastDatesResponse(6, "Last 180 days"),
+        PastDatesResponse(7, "Custom")
+    )
+```
+
+
+
+## OverView:
+* **getToday()**: This is use to get current date means today date.
+* **getYesterday()**: This method in library is used to get yesterday date.
+* **getLastXDays()**: This method in library is used to get date rangle between days just have to pas number of days as parameter in this method.
+* **getSelectedDateRange()**: This method in library is used to get date rangle between start and end means custom date selection.
+
+
+
+## Find this library useful? :heart:
+
+However, if you get some profit from this or just want to encourage me to continue creating stuff, there are few ways you can do it. :coffee: :hamburger: :fries: :apple:
+
+Support it by joining stargazers to this. ⭐
+
+Also, [follow me on GitHub](https://github.com/SultanAyubi360) for my next creations! 🤩
+
 
