@@ -64,8 +64,6 @@ include the CustomCalendarView into your activity/fragment layout using the foll
 
 ### Step 3
 
-Reference the View in Kotlin code.
-
 This is used to add options how many you want to display on calendar.Just change the options you want to change according to your need.
 
 ```groovy
@@ -83,18 +81,127 @@ This is used to add options how many you want to display on calendar.Just change
 Let us now initialize the calendar view to control the various other appearances and behavior of calendar using the following methods.
 
 ```groovy
- private val pastDateListEntries = arrayListOf(
-        PastDatesResponse(1, "Today"),
-        PastDatesResponse(2, "Yesterday"),
-        PastDatesResponse(3, "Last 30 days"),
-        PastDatesResponse(4, "Last 60 days"),
-        PastDatesResponse(5, "Last 90 days"),
-        PastDatesResponse(6, "Last 180 days"),
-        PastDatesResponse(7, "Custom")
-    )
+private fun showCalendarDialog() {
+
+        val calendarDialogBinding: TransactionHistoryCalendarBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(this),
+            com.sultanayubi.customcalendarview.R.layout.transaction_history_calendar,//getting layout binding from library
+            null,
+            false
+        )
+
+        val dialog = AlertDialog.Builder(this).setView(calendarDialogBinding.root).create()
+
+        val selectedColor = ResourcesCompat.getColor(resources, R.color.js_orange, null)//to change color of date selection
+        calendarDialogBinding.customCalendarView.setSelectedDateColor(selectedColor)// use selectedColor variable in library to change
+
+        transactionDatesAdapter = TransactionDatesAdapter(this) { item ->
+            // Update the selected position and date when an item is clicked
+            selectedPosition = item.id - 1
+            selectedDate = item.pastDate
+
+            // Enable or disable date range selection based on the selected position
+            if (selectedPosition in 0..5) {
+                calendarDialogBinding.customCalendarView.disableDateRangeSelection()
+            } else {
+                calendarDialogBinding.customCalendarView.enableDateRangeSelection()
+            }
+        }//use for setting options in recyclerview and click events
+
+        //change background drawable of calendar options
+        transactionDatesAdapter.setTextViewBackground(R.drawable.white_bg_calendar)
+
+        // Set default colors for the adapter
+        val selectedTextColor = ResourcesCompat.getColor(resources, R.color.navyBlue, null)//color used for option selected from side recycerview
+        transactionDatesAdapter.setSelectedTextColor(selectedTextColor)
+
+        val unselectedTextColor = ResourcesCompat.getColor(resources, R.color.text_grey, null)//color used for options not selected from side recycerview
+        transactionDatesAdapter.setUnselectedTextColor(unselectedTextColor)
+
+        // Add items to the adapter and set it to the RecyclerView
+        transactionDatesAdapter.addItems(pastDateListEntries)
+        calendarDialogBinding.recordDateView.layoutManager = LinearLayoutManager(this)
+        calendarDialogBinding.recordDateView.adapter = transactionDatesAdapter
+
+       color used for option selected from side recycerview
+        val monthTextColor = ResourcesCompat.getColor(resources, R.color.navyBlue, null)//setting color for month and year textview
+        calendarDialogBinding .month.setTextColor(monthTextColor)
+        calendarDialogBinding .month.text = calendarDialogBinding.customCalendarView.getCurrentMonthName()
+
+        calendarDialogBinding.forwardimage.setImageResource(R.drawable.ic_arrow_forward)//to change forward arrow of your choice use drawable
+        calendarDialogBinding.nextMonth.setSafeOnClickListener {
+            calendarDialogBinding.customCalendarView.nextMonth(calendarDialogBinding.month)
+        }
+
+        calendarDialogBinding.previousimage.setImageResource(R.drawable.ic_arrow_back)//to change previous arrow of your choice use drawable
+        calendarDialogBinding.previousMonth.setSafeOnClickListener {
+            calendarDialogBinding.customCalendarView.previousMonth(calendarDialogBinding.month)
+        }
+
+        calendarDialogBinding.cancel.setBackgroundResource(R.drawable.blue_stroke_button)//to change cancel button background can change drawable
+        calendarDialogBinding.cancel.setSafeOnClickListener {
+            dialog.dismiss()
+        }
+
+        calendarDialogBinding.pickDate.setBackgroundResource(R.drawable.blue_radiant_button)//to change ok button background can change drawable
+        calendarDialogBinding.pickDate.setSafeOnClickListener {
+
+            when (selectedPosition) {
+                0 -> {
+                    val todayDate = calendarDialogBinding.customCalendarView.getToday() //used to get current date today date
+                    Toast.makeText(this, "Today: $todayDate", Toast.LENGTH_SHORT).show()
+                }
+
+                1 -> {
+                    val yesterdayDate = calendarDialogBinding.customCalendarView.getYesterday() //used to get yesterday date last day date
+                    Toast.makeText(this, "Yesterday: $yesterdayDate", Toast.LENGTH_SHORT).show()
+                }
+
+                2 -> {
+                    val (startDate, endDate) = calendarDialogBinding.customCalendarView.getLastXDays(30) //used to get last 30 days dates just pass 30 as parameter to this method
+                    Toast.makeText(this, "Last 30 days: $startDate to $endDate", Toast.LENGTH_SHORT).show()
+                }
+
+                3 -> {
+                    val (startDate, endDate) = calendarDialogBinding.customCalendarView.getLastXDays(60) //used to get last 60 days dates just pass 60 as parameter to this method
+                    Toast.makeText(this, "Last 30 days: $startDate to $endDate", Toast.LENGTH_SHORT).show()
+                }
+
+                4 -> {
+                    val (startDate, endDate) = calendarDialogBinding.customCalendarView.getLastXDays(90) //used to get last 90 days dates just pass 90 as parameter to this method
+                    Toast.makeText(this, "Last 30 days: $startDate to $endDate", Toast.LENGTH_SHORT).show()
+                }
+
+                5 -> {
+                    val (startDate, endDate) = calendarDialogBinding.customCalendarView.getLastXDays(180) //used to get last 180 days dates just pass 180 as parameter to this method
+                    Toast.makeText(this, "Last 30 days: $startDate to $endDate", Toast.LENGTH_SHORT).show()
+                }
+
+                6 -> {
+                    val (startDat, endDat) = calendarDialogBinding.customCalendarView.getSelectedDateRange() //used to get days dates selected by user start and end date of its choice custom dates
+                    if (startDat == null && endDat == null) {
+                        Toast.makeText(this, "No dates selected", Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(this, "$startDat to $endDat", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            dialog.dismiss()
+        }
+
+        dialog.setCancelable(false)
+        val inset = InsetDrawable(ColorDrawable(Color.TRANSPARENT), 10)
+        dialog.window?.setBackgroundDrawable(inset)
+        dialog.window?.attributes?.windowAnimations = R.style.animated_popup //animation to animate dilaog can use other animation as you want
+
+        dialog.show()
+    }
+
 ```
 
+Simply call this method to show dialog in your fragment or activity on button click or in oncreate of activity and onviewcreated of fragment.
 
+---
 
 ## OverView:
 * **getToday()**: This is use to get current date means today date.
