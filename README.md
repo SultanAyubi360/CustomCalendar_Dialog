@@ -10,7 +10,7 @@ A highly customizable calendar library for Android.The CustomCalendarView provid
 
 ## Usage
 
-- **Step 1**
+### Step 1
 
 #### In older Gradle Style (Build.gradle (project level))
 ```
