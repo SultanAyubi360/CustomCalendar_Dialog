@@ -162,10 +162,16 @@ private fun showCalendarDialog() {
             calendarDialogBinding.customCalendarView.previousMonth(calendarDialogBinding.month)
         }
 
+        val cancelTextColor = ResourcesCompat.getColor(resources, R.color.navyBlue, null)
+        calendarDialogBinding.cancel.setTextColor(cancelTextColor)//to change cancel button text color
+
         calendarDialogBinding.cancel.setBackgroundResource(R.drawable.blue_stroke_button)//to change cancel button background can change drawable
         calendarDialogBinding.cancel.setSafeOnClickListener {
             dialog.dismiss()
         }
+
+         val okTextColor = ResourcesCompat.getColor(resources, R.color.white, null)
+        calendarDialogBinding.pickDate.setTextColor(okTextColor)//to change ok button text color
 
         calendarDialogBinding.pickDate.setBackgroundResource(R.drawable.blue_radiant_button)//to change ok button background can change drawable
         calendarDialogBinding.pickDate.setSafeOnClickListener {
