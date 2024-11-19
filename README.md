@@ -199,7 +199,7 @@ private fun showCalendarDialog() {
 
 ```
 
-Simply call this method to show dialog in your fragment or activity on button click or in oncreate of activity and onviewcreated of fragment.
+Simply call this method to show dialog in your fragment or activity on button click or in oncreate of activity and onviewcreated of fragment.just add this method and call it anywhere you want and change drawables and backgrounds according to your choices.
 
 ---
 
