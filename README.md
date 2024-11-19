@@ -8,6 +8,19 @@ A highly customizable calendar library for Android.The CustomCalendarView provid
 
 </div>
 
+
+## Features
+
+Currently, it supports the following features:
+
+* Next and previous month's navigation.
+* Allow various customization including background color for date selectcion,spot color,buttons and title drawables.
+* Set custom drawables according to need.
+* Show current date selected bydefault.
+* Get today,yesterday dates and dates of days just by giving days count.
+* Allow you to handle events when the user changes month and day selection means custom date selection.
+
+
 ## Usage
 
 ### Step 1
