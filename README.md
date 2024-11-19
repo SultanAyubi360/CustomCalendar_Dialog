@@ -14,7 +14,7 @@ A highly customizable calendar library for Android.The CustomCalendarView provid
   <img src="https://i.ibb.co/FbQzjMz/Screenshot-20241119-162242.jpg" width=30% height=30%/>
   <img src="https://i.ibb.co/jHZYkgd/Screenshot-20241119-162215.jpg.jpg" width=30% height=30%/>
   <img src="https://i.ibb.co/SxRVgPp/Screenshot-20241119-162522.jpg" width=30% height=30%/>
-  <img src="https://i.ibb.co/pZ7ffmR/screenshot4.jpg" width=30% height=30%/>
+  <img src="https://i.ibb.co/J2DYZvb/Screenshot-20241119-163523.jpg" width=30% height=30%/>
   <img src="https://i.ibb.co/RDSMqw7/screenshot5.jpg" width=30% height=30%/>
 </kbd>
 
