@@ -1,5 +1,5 @@
 # CustomCalendar_Dialog
-A highly customizable calendar library for Android.
+A highly customizable calendar library for Android.The CustomCalendarView provides an easy and customizable calendar to create a Calendar.To use the CustomCalendarView in your application, you first need to add the library to your application. You can do this either from Gradle, or Maven or by directly downloading the source code from GitHub
 
 <div align="center">
 	
@@ -45,7 +45,7 @@ Include the library as a local library project or add the dependency in your bui
 
 ```
 dependencies {
-    implementation 'com.github.SultanAyubi360:SeekbarLibrary:1.2'
+   implementation 'com.github.SultanAyubi360:CustomCalendar_Dialog:1.0'
 }
 ```
 
@@ -54,7 +54,7 @@ dependencies {
 
 ```
 dependencies {
-    implementation ("com.github.SultanAyubi360:SeekbarLibrary:1.2")
+    implementation ("com.github.SultanAyubi360:CustomCalendar_Dialog:1.0")
 }
 ```
 
