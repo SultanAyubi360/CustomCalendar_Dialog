@@ -9,7 +9,6 @@ A highly customizable calendar library for Android.The CustomCalendarView provid
 </div>
 
 ## Usage
-### Gradle
 
 - **Step 1**
 
