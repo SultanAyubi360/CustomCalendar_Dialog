@@ -1,5 +1,5 @@
 # CustomCalendar_Dialog
-A highly customizable calendar library for Android.The CustomCalendarView provides an easy and customizable calendar to create a Calendar.To use the CustomCalendarView in your application, you first need to add the library to your application. You can do this either from Gradle, or Maven or by directly downloading the source code from GitHub
+A highly customizable calendar library for Android.The CustomCalendarView provides an easy and customizable calendar to create a Calendar.To use the CustomCalendarView in your application, you first need to add the library to your application.
 
 <div align="center">
 	
