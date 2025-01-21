@@ -239,6 +239,10 @@ Simply call this method to show dialog in your fragment or activity on button cl
 * **getLastXDays()**: This method in library is used to get date rangle between days just have to pas number of days as parameter in this method.
 * **getSelectedDateRange()**: This method in library is used to get date rangle between start and end means custom date selection.
 
+## Reporting an issue
+
+If you are going to report an issue, I will greatly appreciate you including some code which I can run to see the issue. By doing so you maximize the chance that I will fix the problem. 
+By the way, before reporting a problem, try replacing DiscreteScrollView with a RecyclerView. If the problem is still present, it's likely somewhere in your code.
 
 
 ## Find this library useful? :heart:
