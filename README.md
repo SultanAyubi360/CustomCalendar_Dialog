@@ -4,7 +4,7 @@ A highly customizable calendar library for Android.The CustomCalendarView provid
 <div align="center">
 	
 [![](https://jitpack.io/v/SultanAyubi360/CustomCalendar_Dialog.svg)](https://jitpack.io/#SultanAyubi360/CustomCalendar_Dialog/1.0)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)  ![Kotlin](https://img.shields.io/badge/Kotlin-100%25-brightgreen)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Kotlin](https://img.shields.io/badge/Kotlin-100%25-brightgreen)
 
 </div>
 
